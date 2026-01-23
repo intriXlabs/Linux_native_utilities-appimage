@@ -22,4 +22,4 @@ Download, make it executable, and run:
 
 ```bash
 chmod +x Calci.AppImage
-./Calci.AppImage
+./calci.AppImage
