@@ -1,0 +1,40 @@
+head.page_title{Main title of the webpage shown in browser tab and search results}
+head.page_description{SEO description used by search engines for page summary}
+head.page_keywords{Comma-separated keywords for SEO indexing}
+head.page_author{Author or organization name for metadata}
+
+assets.hero_background{Background image URL for hero section banner}
+
+header.company_name{Brand or company name displayed in header logo area}
+header.nav_home{Navigation label for home section link}
+header.nav_features{Navigation label for features section link}
+header.nav_about{Navigation label for about section link}
+header.nav_contact{Navigation label for contact section link}
+
+hero.main_title{Primary headline text shown in hero section}
+hero.subtitle_text{Supporting subtitle text under hero headline}
+hero.cta_link{URL where hero call-to-action button redirects}
+hero.cta_button{Text label displayed on hero call-to-action button}
+
+features.feature1_title{Title text for first feature card}
+features.feature1_desc{Description text for first feature card}
+features.feature2_title{Title text for second feature card}
+features.feature2_desc{Description text for second feature card}
+features.feature3_title{Title text for third feature card}
+features.feature3_desc{Description text for third feature card}
+
+content.main_content{Main about-us content HTML or text block}
+
+footer.company_name{Company or brand name shown in footer}
+footer.company_description{Short description of company shown in footer}
+footer.quick_links{Heading text for footer quick links section}
+footer.link_home{Footer link label for home section}
+footer.link_features{Footer link label for features section}
+footer.link_about{Footer link label for about section}
+footer.link_contact{Footer link label for contact section}
+footer.contact_info{Heading label for contact information section}
+footer.contact_address{Physical or mailing address text}
+footer.contact_email{Contact email address text}
+footer.contact_phone{Contact phone number text}
+footer.copyright_text{Copyright notice text displayed at bottom of footer}
+

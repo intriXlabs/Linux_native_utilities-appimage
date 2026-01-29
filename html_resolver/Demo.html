@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+{{head.page_title}}
+</title>
+
+<meta name="description" content="
+{{head.page_description}}
+">
+<meta name="keywords" content="
+{{head.page_keywords}}
+">
+<meta name="author" content="
+{{head.page_author}}
+">
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+:root {
+--primary-color: #6366f1;
+--primary-dark: #4f46e5;
+--secondary-color: #10b981;
+--dark-bg: #0f172a;
+--card-bg: #1e293b;
+--text-light: #f8fafc;
+--text-muted: #94a3b8;
+--border-color: #334155;
+--gradient-start: #7c3aed;
+--gradient-end: #3b82f6;
+}
+
+body {
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color: var(--dark-bg);
+color: var(--text-light);
+line-height: 1.6;
+min-height: 100vh;
+}
+
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+/* Header Styles */
+.main-header {
+background: rgba(15, 23, 42, 0.95);
+backdrop-filter: blur(10px);
+border-bottom: 1px solid var(--border-color);
+position: sticky;
+top: 0;
+z-index: 1000;
+}
+
+.nav-container {
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 20px 0;
+}
+
+.logo {
+font-size: 1.8rem;
+font-weight: 700;
+background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.nav-links {
+display: flex;
+gap: 30px;
+}
+
+.nav-link {
+color: var(--text-light);
+text-decoration: none;
+font-weight: 500;
+transition: color 0.3s ease;
+padding: 8px 0;
+position: relative;
+}
+
+.nav-link:hover {
+color: var(--primary-color);
+}
+
+.nav-link::after {
+content: '';
+position: absolute;
+bottom: 0;
+left: 0;
+width: 0;
+height: 2px;
+background: var(--primary-color);
+transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+width: 100%;
+}
+
+/* Hero Section */
+.hero-section {
+padding: 100px 0;
+background: linear-gradient(135deg, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.95)),
+url('
+{{assets.hero_background}}
+');
+background-size: cover;
+background-position: center;
+position: relative;
+overflow: hidden;
+}
+
+.hero-content {
+max-width: 800px;
+margin: 0 auto;
+text-align: center;
+position: relative;
+z-index: 2;
+}
+
+.hero-title {
+font-size: 3.5rem;
+font-weight: 800;
+background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+margin-bottom: 20px;
+line-height: 1.2;
+}
+
+.hero-subtitle {
+font-size: 1.3rem;
+color: var(--text-muted);
+max-width: 600px;
+margin: 0 auto 40px;
+}
+
+.cta-button {
+display: inline-block;
+background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+color: white;
+padding: 15px 40px;
+border-radius: 50px;
+text-decoration: none;
+font-weight: 600;
+font-size: 1.1rem;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+border: none;
+cursor: pointer;
+}
+
+.cta-button:hover {
+transform: translateY(-3px);
+box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+}
+
+/* Content Sections */
+.section {
+padding: 80px 0;
+}
+
+.section-title {
+font-size: 2.5rem;
+font-weight: 700;
+text-align: center;
+margin-bottom: 50px;
+color: var(--text-light);
+}
+
+.section-title span {
+color: var(--primary-color);
+}
+
+.features-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 30px;
+margin-top: 50px;
+}
+
+.feature-card {
+background: var(--card-bg);
+border-radius: 20px;
+padding: 40px 30px;
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+border: 1px solid var(--border-color);
+}
+
+.feature-card:hover {
+transform: translateY(-10px);
+box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+font-size: 2.5rem;
+margin-bottom: 20px;
+color: var(--primary-color);
+}
+
+.feature-title {
+font-size: 1.5rem;
+font-weight: 600;
+margin-bottom: 15px;
+color: var(--text-light);
+}
+
+.feature-description {
+color: var(--text-muted);
+line-height: 1.7;
+}
+
+/* Content Area */
+.content-area {
+background: var(--card-bg);
+border-radius: 20px;
+padding: 50px;
+margin: 30px 0;
+border: 1px solid var(--border-color);
+line-height: 1.8;
+}
+
+.content-area h2 {
+color: var(--primary-color);
+margin-bottom: 20px;
+font-size: 2rem;
+}
+
+.content-area p {
+margin-bottom: 20px;
+font-size: 1.1rem;
+}
+
+/* Footer */
+.main-footer {
+background: rgba(15, 23, 42, 0.95);
+border-top: 1px solid var(--border-color);
+padding: 60px 0 30px;
+}
+
+.footer-content {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+gap: 40px;
+margin-bottom: 40px;
+}
+
+.footer-section h3 {
+color: var(--text-light);
+margin-bottom: 20px;
+font-size: 1.3rem;
+}
+
+.footer-links {
+list-style: none;
+}
+
+.footer-links li {
+margin-bottom: 10px;
+}
+
+.footer-links a {
+color: var(--text-muted);
+text-decoration: none;
+transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+color: var(--primary-color);
+}
+
+.copyright {
+text-align: center;
+padding-top: 30px;
+border-top: 1px solid var(--border-color);
+color: var(--text-muted);
+font-size: 0.9rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.hero-title {
+font-size: 2.5rem;
+}
+
+.nav-container {
+flex-direction: column;
+gap: 20px;
+}
+
+.nav-links {
+flex-wrap: wrap;
+justify-content: center;
+}
+
+.section {
+padding: 50px 0;
+}
+
+.feature-card {
+padding: 30px 20px;
+}
+
+.content-area {
+padding: 30px 20px;
+}
+}
+
+/* Animation for hero text */
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(30px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+
+.hero-content > * {
+animation: fadeInUp 0.8s ease forwards;
+opacity: 0;
+}
+
+.hero-content > *:nth-child(1) { animation-delay: 0.2s; }
+.hero-content > *:nth-child(2) { animation-delay: 0.4s; }
+.hero-content > *:nth-child(3) { animation-delay: 0.6s; }
+</style>
+</head>
+<body>
+<!-- Header Section -->
+<header class="main-header">
+<div class="container nav-container">
+<div class="logo">
+{{header.company_name}}
+</div>
+<nav class="nav-links">
+<a href="#home" class="nav-link">
+{{header.nav_home}}
+</a>
+<a href="#features" class="nav-link">
+{{header.nav_features}}
+</a>
+<a href="#about" class="nav-link">
+{{header.nav_about}}
+</a>
+<a href="#contact" class="nav-link">
+{{header.nav_contact}}
+</a>
+</nav>
+</div>
+</header>
+
+<!-- Hero Section -->
+<section class="hero-section" id="home">
+<div class="container hero-content">
+<h1 class="hero-title">
+{{hero.main_title}}
+</h1>
+<p class="hero-subtitle">
+{{hero.subtitle_text}}
+</p>
+<a href="
+{{hero.cta_link}}
+" class="cta-button">
+{{hero.cta_button}}
+</a>
+</div>
+</section>
+
+<!-- Features Section -->
+<section class="section" id="features">
+<div class="container">
+<h2 class="section-title">Our <span>Features</span></h2>
+<div class="features-grid">
+<div class="feature-card">
+<div class="feature-icon">🚀</div>
+<h3 class="feature-title">
+{{features.feature1_title}}
+</h3>
+<p class="feature-description">
+{{features.feature1_desc}}
+</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">🎯</div>
+<h3 class="feature-title">
+{{features.feature2_title}}
+</h3>
+<p class="feature-description">
+{{features.feature2_desc}}
+</p>
+</div>
+
+<div class="feature-card">
+<div class="feature-icon">💡</div>
+<h3 class="feature-title">
+{{features.feature3_title}}
+</h3>
+<p class="feature-description">
+{{features.feature3_desc}}
+</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Main Content Section -->
+<section class="section" id="about">
+<div class="container">
+<h2 class="section-title">About <span>Us</span></h2>
+<div class="content-area">
+{{content.main_content}}
+</div>
+</div>
+</section>
+
+<!-- Footer Section -->
+<footer class="main-footer">
+<div class="container">
+<div class="footer-content">
+<div class="footer-section">
+<h3>
+{{footer.company_name}}
+</h3>
+<p>
+{{footer.company_description}}
+</p>
+</div>
+
+<div class="footer-section">
+<h3>
+{{footer.quick_links}}
+</h3>
+<ul class="footer-links">
+<li><a href="#home">
+{{footer.link_home}}
+</a></li>
+<li><a href="#features">
+{{footer.link_features}}
+</a></li>
+<li><a href="#about">
+{{footer.link_about}}
+</a></li>
+<li><a href="#contact">
+{{footer.link_contact}}
+</a></li>
+</ul>
+</div>
+
+<div class="footer-section">
+<h3>
+{{footer.contact_info}}
+</h3>
+<p>
+{{footer.contact_address}}
+</p>
+<p>
+{{footer.contact_email}}
+</p>
+<p>
+{{footer.contact_phone}}
+</p>
+</div>
+</div>
+
+<div class="copyright">
+{{footer.copyright_text}}
+</div>
+</div>
+</footer>
+
+</body>
+</html>
