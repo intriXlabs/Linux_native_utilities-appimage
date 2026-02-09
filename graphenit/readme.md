@@ -97,7 +97,7 @@ That’s why it works.
 * 4 GB RAM recommended (runs on less)
 * No Python required
 * No internet required
-* ubuntu latest (22.05 lts)
+* ubuntu latest (22.04.5 lts)
 
 ### To develop
 
