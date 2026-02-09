@@ -1,5 +1,5 @@
 
-thre's no appimage - due to size and issue - so there's link of direct appimage (mediafire)
+thre's no appimage - due to size and issue - so there's link of direct appimage (mediafire): https://www.mediafire.com/file/p9s5drgm147kyev/Graphenit.appimage/file
 ---
 
 # Graphenit
