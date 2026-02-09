@@ -1,5 +1,5 @@
 
-
+thre's no appimage - due to size and issue - so there's direct python code - run and enjoy
 ---
 
 # Graphenit
