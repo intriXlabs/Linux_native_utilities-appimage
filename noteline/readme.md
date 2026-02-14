@@ -1,5 +1,4 @@
 
----
 
 # Noteline
 
@@ -144,5 +143,3 @@ But small tools, used daily, matter more than big ideas never finished.
 
 If you use it and it helps you think more clearly —
 then it has already succeeded.
-
----
